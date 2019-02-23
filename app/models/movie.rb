@@ -28,6 +28,6 @@ class Movie < ApplicationRecord
     only_integer: true,
     greater_than_or_equal_to: 0,
     less_than_or_equal_to: 2764800,
-    :allow_blan => true
+    allow_blank: true
   }
 end

@@ -1,3 +1,14 @@
+<% if @movie.present? %>
+ <%= @movie.erros.full_messages.edach do |messages| %>
+ <div class = "alert alert-danger alert-dismissible fade show" role="alert">
+   <%= message %>
+   <button type = "button" class="close" data-dismiss="alert" aria-lable="Close">
+     <span aria-hidden="true"> &times;</span>
+   </button>
+ </div>
+<% end %>
+<% end %>
+
 <h1>
   Edit movie #<%= @movie.id %>
 </h1>
@@ -49,7 +60,15 @@
 
     <input type="text" id="image_url" name="image_url" class="form-control" value="<%= @movie.image_url %>">
   </div>
+ 
+ <!-- Label and input for director_id -->
+  <div class="form-group">
+    <label for="director_id">
+      Director
+    </label>
 
+    <input type="text" id="director_id" name="director_id" class="form-control" value="<%= @movie.director_id %>">
+  </div>
   <button class="btn btn-block btn-outline-secondary">
     Update movie
   </button>
