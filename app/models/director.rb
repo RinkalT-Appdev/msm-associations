@@ -13,7 +13,7 @@
 
 class Director < ApplicationRecord
   validates :name, presence: true
-  validates :title, uniqueness: {
+  validates :name, uniqueness: {
     scope: :dob,
     message: "should be unique with respect to date of birth"
   }
