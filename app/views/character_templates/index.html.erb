@@ -20,6 +20,10 @@
         <th>
           ID
         </th>
+        
+         <th>
+          Name
+        </th>
 
         <th>
           Movie
@@ -30,48 +34,36 @@
         </th>
 
         <th>
-          Name
-        </th>
-
-        <th>
-          Created at
-        </th>
-
-        <th>
-          Updated at
-        </th>
-
-        <th>
         </th>
       </tr>
 
       <% @characters.each do |character| %>
-      <tr>
+      <tr> 
+
         <td>
           <%= character.id %>
         </td>
-
-        <td>
-          <%= character.movie_id %>
-        </td>
-
-        <td>
-          <%= character.actor_id %>
-        </td>
-
-        <td>
+        
+         <td>
           <%= character.name %>
         </td>
-
         <td>
-          <%= time_ago_in_words(character.created_at) %> ago
-        </td>
-        <td>
-          <%= time_ago_in_words(character.updated_at) %> ago
+          <a href="/movies/<%= character.movie_id %>">
+          <%= Movie.find(character.movie_id).title %>
+          </a>
         </td>
 
         <td>
-          <a href="/characters/<%= character.id %>">
+          <a href="/actors/<%= character.actor_id %>">
+          <%= Actor.find(character.actor_id).name %>
+          </a>
+        </td>
+
+       
+
+
+        <td>
+          <a href="/characters/<%= character.id %>" class = "btn btn-primary">
             Show details
           </a>
         </td>

@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   # CREATE
   get("/characters/new", { :controller => "characters", :action => "new_form" })
   post("/create_character", { :controller => "characters", :action => "create_row" })
+  
 
   # READ
   get("/characters", { :controller => "characters", :action => "index" })
